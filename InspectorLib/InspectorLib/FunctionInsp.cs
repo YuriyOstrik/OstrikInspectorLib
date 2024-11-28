@@ -47,22 +47,17 @@ namespace InspectorLib
         // Метод для генерации госномера
         public string GenerateNumber()
         {
-            Random rand = new Random(); int number = rand.Next(100, 1000); 
-            // Генерация случайного числа от 100 до 999 и символов
+            Random rand = new Random(); int number = rand.Next(100, 1000);
+            // Генерация случайного числа от 100 до 999
             string symbols = "АВЕКМНОРСТУХ"; 
-            char firstSymbol = symbols[rand.Next(symbols.Length)]; 
-            char secondSymbol = symbols[rand.Next(symbols.Length)];
-            char thirdSymbol = symbols[rand.Next(symbols.Length)];
-            return $"{firstSymbol}{number}{secondSymbol}{thirdSymbol}75"; 
+            // Доступные символы кириллицы
+            char firstSymbol = symbols[rand.Next(symbols.Length)];
+            return $"{firstSymbol}{number}_75"; 
         }
-            // Метод для получения списка сотрудников
-            public List<string> GetWorker()
-        {
-            return _workers;
-        }
+        public List<string> GetWorker() { return _workers; }
 
-        // Метод для добавления нового сотрудника в список
-        public void AddWorker(string fullname)
+            // Метод для добавления нового сотрудника в список
+            public void AddWorker(string fullname)
         {
             if (!_workers.Contains(fullname))
             {
