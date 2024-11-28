@@ -54,7 +54,11 @@ namespace InspectorLib
             char firstSymbol = symbols[rand.Next(symbols.Length)];
             return $"{firstSymbol}{number}_75"; 
         }
-        public List<string> GetWorker() { return _workers; }
+        // Метод для получения списка сотрудников
+        public List<string> GetWorker() 
+        { 
+            return _workers;
+        }
 
             // Метод для добавления нового сотрудника в список
             public void AddWorker(string fullname)
